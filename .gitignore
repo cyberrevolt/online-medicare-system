@@ -1,0 +1,15 @@
+target/
+.env
+.env.*
+!.env.example
+.idea/
+.classpath
+.project
+.settings/
+.DS_Store
+*.log
+*.mv.db
+*.trace.db
+*.lock.db
+/data/
+/uploads/

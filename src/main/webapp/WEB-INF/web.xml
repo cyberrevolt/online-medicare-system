@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd" version="6.0">
+  <display-name>Online Medic</display-name>
+  <listener><listener-class>com.onlinemedic.util.AppInitializer</listener-class></listener>
+  <filter><filter-name>securityHeaders</filter-name><filter-class>com.onlinemedic.filter.SecurityHeadersFilter</filter-class></filter>
+  <filter-mapping><filter-name>securityHeaders</filter-name><url-pattern>/*</url-pattern></filter-mapping>
+  <filter><filter-name>authentication</filter-name><filter-class>com.onlinemedic.filter.AuthenticationFilter</filter-class></filter>
+  <filter-mapping><filter-name>authentication</filter-name><url-pattern>/patient/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>authentication</filter-name><url-pattern>/doctor/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>authentication</filter-name><url-pattern>/admin/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>authentication</filter-name><url-pattern>/pharmacist/*</url-pattern></filter-mapping>
+  <filter-mapping><filter-name>authentication</filter-name><url-pattern>/delivery/*</url-pattern></filter-mapping>
+  <session-config><session-timeout>30</session-timeout><cookie-config><http-only>true</http-only></cookie-config><tracking-mode>COOKIE</tracking-mode></session-config>
+  <welcome-file-list><welcome-file>index.jsp</welcome-file></welcome-file-list>
+  <error-page><error-code>404</error-code><location>/errors/404.jsp</location></error-page>
+  <error-page><error-code>500</error-code><location>/errors/500.jsp</location></error-page>
+</web-app>

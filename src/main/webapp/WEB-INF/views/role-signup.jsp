@@ -1,0 +1,12 @@
+<%@ page contentType="text/html;charset=UTF-8" %><%@ taglib prefix="c" uri="jakarta.tags.core" %><c:set var="pageTitle" value="Account setup"/><jsp:include page="/WEB-INF/views/common/header.jsp"/>
+<section class="auth-layout"><div class="auth-aside"><div class="eyebrow eyebrow-light">ACCOUNT SETUP</div><h1><c:choose><c:when test="${signupRole eq 'ADMIN'}">Administrator</c:when><c:when test="${signupRole eq 'DOCTOR'}">Doctor</c:when><c:when test="${signupRole eq 'PHARMACIST'}">Pharmacist</c:when><c:otherwise>Delivery staff</c:otherwise></c:choose> account</h1><p>Online Medic limits account creation by role to protect patient and operational records.</p></div><div class="auth-panel"><span class="eyebrow">NEXT STEP</span>
+  <c:choose>
+    <c:when test="${signupRole eq 'ADMIN'}"><h2>Initial administrator setup</h2><p class="muted">The first administrator is created from the Tomcat launch configuration. Set <code>BOOTSTRAP_ADMIN_EMAIL</code> and <code>BOOTSTRAP_ADMIN_PASSWORD</code>, restart Tomcat, then sign in through the admin portal. Use a unique password of at least 14 characters.</p></c:when>
+    <c:when test="${signupRole eq 'DOCTOR'}"><h2>Doctor accounts are provisioned by an administrator</h2><p class="muted">An administrator must enter the doctor’s registration details and create the account. Ask your Online Medic administrator to add you, then sign in with the credentials they provide.</p></c:when>
+    <c:when test="${signupRole eq 'PHARMACIST'}"><h2>Pharmacist accounts are provisioned by an administrator</h2><p class="muted">An administrator must enter the pharmacy and license details and create the account. Ask your Online Medic administrator to add you, then sign in with the credentials they provide.</p></c:when>
+    <c:otherwise><h2>Delivery accounts are provisioned by an administrator</h2><p class="muted">An administrator must create the delivery account. Ask your Online Medic administrator to add you, then sign in with the credentials they provide.</p></c:otherwise>
+  </c:choose>
+  <c:if test="${signupRole ne 'ADMIN'}"><a class="button button-full" href="${pageContext.request.contextPath}/login/admin">Administrator sign in to create this account</a></c:if>
+  <a class="button button-outline button-full" href="${signupLoginPath}">Continue to sign in</a><p class="auth-switch"><a href="${pageContext.request.contextPath}/login">Choose another portal</a></p>
+</div></section>
+<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
