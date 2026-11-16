@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 104" role="img" aria-label="Friendly care companion">
+  <style>
+    @keyframes blink{0%,94%,100%{transform:scaleY(1)}96%,98%{transform:scaleY(.12)}}
+    .eye{transform-box:fill-box;transform-origin:center;animation:blink 5s ease-in-out infinite}
+    @media(prefers-reduced-motion:reduce){.eye{animation:none}}
+  </style>
+  <ellipse cx="48" cy="96" rx="22" ry="5" fill="#b9d8d1" opacity=".58"/>
+  <path d="M23 56c-8 2-12 7-13 14m63-14c8 2 12 7 13 14" fill="none" stroke="#13847c" stroke-width="5" stroke-linecap="round"/>
+  <path d="m18 68 2 7m58-7-2 7" fill="none" stroke="#13847c" stroke-width="5" stroke-linecap="round"/>
+  <path d="m39 82-3 10m21-10 3 10" fill="none" stroke="#465d60" stroke-width="5" stroke-linecap="round"/>
+  <path d="M48 10c-15 0-27 12-27 27v24c0 15 12 27 27 27s27-12 27-27V37C75 22 63 10 48 10Z" fill="#fff" stroke="#c6dcd7" stroke-width="2"/>
+  <path d="M48 10c-15 0-27 12-27 27v7h54v-7C75 22 63 10 48 10Z" fill="#20a197"/>
+  <path d="M48 10v34" fill="none" stroke="#d7eeea" stroke-width="2" opacity=".9"/>
+  <circle class="eye" cx="38" cy="55" r="2.8" fill="#354b50"/>
+  <circle class="eye" cx="58" cy="55" r="2.8" fill="#354b50"/>
+  <path d="M41 65c4 4 10 4 14 0" fill="none" stroke="#536a6d" stroke-width="2.3" stroke-linecap="round"/>
+  <circle cx="31" cy="63" r="3.1" fill="#f0a69c" opacity=".62"/>
+  <circle cx="65" cy="63" r="3.1" fill="#f0a69c" opacity=".62"/>
+  <circle cx="68" cy="30" r="10" fill="#fff" stroke="#c6dcd7" stroke-width="1.5"/>
+  <path d="M68 25v10m-5-5h10" stroke="#13847c" stroke-width="2.5" stroke-linecap="round"/>
+</svg>
