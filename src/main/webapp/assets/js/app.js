@@ -4,8 +4,16 @@
     menu.addEventListener('click', function () {
       var open = menu.getAttribute('aria-expanded') === 'true';
       menu.setAttribute('aria-expanded', String(!open));
+      menu.setAttribute('aria-label', open ? 'Open navigation' : 'Close navigation');
       var nav = document.querySelector('.main-nav');
       if (nav) nav.classList.toggle('nav-open', !open);
+    });
+    var nav = document.querySelector('.main-nav');
+    if (nav) nav.addEventListener('click', function (event) {
+      if (!event.target.closest('a')) return;
+      nav.classList.remove('nav-open');
+      menu.setAttribute('aria-expanded', 'false');
+      menu.setAttribute('aria-label', 'Open navigation');
     });
   }
 
